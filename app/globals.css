@@ -19,3 +19,15 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+
+/* Add inverse triangle clip-path */
+.clip-path-inverse-triangle {
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 95%, 0 85%);
+}
+
+@screen md {
+  .clip-path-inverse-triangle {
+    clip-path: polygon(0 0, 100% 0, 100% 75%, 50% 85%, 0 75%);
+  }
+}
