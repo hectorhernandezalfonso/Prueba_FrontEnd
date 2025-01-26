@@ -1,51 +1,52 @@
-// components/Feature.tsx
+// components/Features.tsx
 'use client';
+import FeatureHeader from '@/components/FeatureComponents/FeatureHeader';
+import FeatureItem from '@/components/FeatureComponents/FeatureItem';
 
-interface FeatureItem {
-  title: string;
-  subtitle: string;
-  description: string;
-}
+export default function Features() {
+  const FEATURES_DATA = [
+    {
+      imageSrc: '/images/featureImages/ball_square.svg',
+      title: 'OpenType features',
+      subtitle: 'Variable fonts',
+      description: 'Slate helps you see how many more days you need to work to reach your financial goal.'
+    },
+    {
+      imageSrc: '/images/featureImages/pencil.svg',
+      title: 'Design with real data',
+      description: 'Slate helps you see how many more days you need to work to reach your financial goal.'
+    },
+    {
+      imageSrc: '/images/featureImages/paint_brush.svg',
+      title: 'Fastest way to',
+      subtitle: 'Take action',
+      description: 'Slate helps you see how many more days you need to work to reach your financial goal.'
+    }
+  ];
 
-interface FeaturesProps {
-  features: FeatureItem[];
-}
-
-export default function Features({ features }: FeaturesProps) {
   return (
     <section className="py-12 sm:py-24 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="mx-auto max-w-7xl">
-        {/* Section Header */}
-        <div className="text-center mb-12 md:mb-20">
-          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
-            Features
-          </h2>
-          <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
-            Most calendars are designed for teams. 
-            <span className="block md:inline">Slate is designed for freelancers</span>
-          </p>
-        </div>
-
-        {/* Features Grid */}
-        <div className="grid md:grid-cols-3 gap-8 md:gap-12">
-          {features.map((feature, index) => (
-            <div key={index} className="text-center md:text-left">
-              {/* Title & Subtitle */}
-              <div className="mb-4">
-                <h3 className="text-xl md:text-2xl font-bold text-gray-900">
-                  {feature.title}
-                </h3>
-                <p className="text-lg md:text-xl text-gray-600 mt-2">
-                  {feature.subtitle}
-                </p>
-              </div>
-
-              {/* Description */}
-              <p className="text-base md:text-lg text-gray-500 leading-relaxed">
-                {feature.description}
-              </p>
-            </div>
-          ))}
+        <FeatureHeader
+          title="Features"
+          description={
+            <>
+              Most calendars are designed for teams.
+              <span className="block md:inline">Slate is designed for freelancers</span>
+            </>
+          }
+        />
+        
+        {/* Centered container with 50% width on desktop */}
+        <div className="flex justify-center">
+          <div className="grid md:grid-cols-3 gap-8 md:gap-12 w-full md:w-3/4 lg:w-1/2">
+            {FEATURES_DATA.map((feature, index) => (
+              <FeatureItem
+                key={index}
+                {...feature}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>
