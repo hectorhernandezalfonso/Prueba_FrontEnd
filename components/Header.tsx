@@ -16,10 +16,12 @@ export default function Header() {
   ];
 
   return (
-    <header className="relative h-screen">
+    <header className="relative h-screen flex flex-col">
       <Background />
       <NavigationBar navItems={navItems} />
-      <HeroSection />
+      <div className="flex-1">
+        <HeroSection />
+      </div>
     </header>
   );
 }

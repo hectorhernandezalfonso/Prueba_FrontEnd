@@ -15,7 +15,7 @@ export default function NavigationBar({ navItems }: NavigationBarProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className="relative z-10 bg-transparent">
+    <nav className="relative z-10 bg-transparent pt-8">
       {/* Main container with 80% width on desktop */}
       <div className="mx-auto px-4 sm:px-6 lg:px-8 w-full md:w-4/5">
         <div className="flex h-16 items-center justify-between">

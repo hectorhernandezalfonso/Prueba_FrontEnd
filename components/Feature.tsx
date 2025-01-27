@@ -2,7 +2,7 @@
 'use client';
 import FeatureHeader from '@/components/FeatureComponents/FeatureHeader';
 import FeatureItem from '@/components/FeatureComponents/FeatureItem';
-
+import FeatureVideo from '@/components/FeatureComponents/FeatureVideo';
 export default function Features() {
   const FEATURES_DATA = [
     {
@@ -18,8 +18,8 @@ export default function Features() {
     },
     {
       imageSrc: '/images/featureImages/paint_brush.svg',
-      title: 'Fastest way to',
-      subtitle: 'Take action',
+      title: 'Fastest way to take action',
+      subtitle: '',
       description: 'Slate helps you see how many more days you need to work to reach your financial goal.'
     }
   ];
@@ -37,15 +37,25 @@ export default function Features() {
           }
         />
         
-        {/* Centered container with 50% width on desktop */}
-        <div className="flex justify-center">
-          <div className="grid md:grid-cols-3 gap-8 md:gap-12 w-full md:w-3/4 lg:w-1/2">
-            {FEATURES_DATA.map((feature, index) => (
-              <FeatureItem
-                key={index}
-                {...feature}
-              />
-            ))}
+        {/* Responsive order container */}
+        <div className="flex flex-col">
+          {/* FeatureVideo - appears first on mobile, last on desktop */}
+          <div className="order-1 md:order-2 pt-5 pb-5 md:pt-20">
+            <FeatureVideo videoUrl="https://www.youtube.com/watch?v=YUwl8gKGtqs"/>
+          </div>
+  
+          {/* FeatureItems container - appears last on mobile, first on desktop */}
+          <div className="order-2 md:order-1 md:pb-20">
+            <div className="flex justify-center">
+              <div className="grid md:grid-cols-3 gap-8 md:gap-12 w-full">
+                {FEATURES_DATA.map((feature, index) => (
+                  <FeatureItem
+                    key={index}
+                    {...feature}
+                  />
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>

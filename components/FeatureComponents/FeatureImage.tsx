@@ -9,8 +9,9 @@ interface FeatureImageProps {
 
 export default function FeatureImage({ imageSrc, title }: FeatureImageProps) {
   return (
-    <div className="mb-6 flex justify-center"> {/* Removed md:justify-start */}
-      <div className="relative w-16 h-16 md:w-20 md:h-20">
+    <div className="mb-6 flex justify-center">
+      {/* Further reduced size */}
+      <div className="relative w-10 h-10 md:w-14 md:h-14"> {/* Changed from w-12/md:w-16 */}
         <Image
           src={imageSrc}
           alt={title}

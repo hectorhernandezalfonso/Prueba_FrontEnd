@@ -11,27 +11,23 @@ interface FeatureItemProps {
 
 export default function FeatureItem({ imageSrc, title, subtitle, description }: FeatureItemProps) {
   return (
-    <div className="text-center p-6 md:p-8 h-full flex flex-col items-center bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300">
-      {/* Image Container */}
+    <div className="text-center p-6 md:p-8 h-full flex flex-col items-center bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 md:w-full"> {/* Added md:w-full */}
+
       <FeatureImage imageSrc={imageSrc} title={title} />
 
-      {/* Text Content */}
       <div className="mb-4 flex flex-col items-center flex-1">
-        {/* Title with word break */}
-        <h3 className="text-xl md:text-2xl font-bold text-gray-900 break-words max-w-[200px]">
+        <h3 className="text-xl md:text-2xl font-bold text-gray-900 break-words md:max-w-[300px]"> {/* Increased max-w */}
           {title}
         </h3>
 
-        {/* Optional Subtitle */}
         {subtitle && (
-          <p className="text-lg md:text-xl text-gray-600 mt-2 break-words max-w-[200px]">
+          <p className="text-xl md:text-2xl font-bold text-gray-900 break-words md:max-w-[300px]"> {/* Increased max-w */}
             {subtitle}
           </p>
         )}
       </div>
 
-      {/* Description with constrained width */}
-      <p className="text-base md:text-lg text-gray-500 leading-relaxed max-w-[280px]">
+      <p className="text-base md:text-lg text-gray-500 leading-relaxed md:max-w-[400px] w-full"> {/* Increased max-w */}
         {description}
       </p>
     </div>

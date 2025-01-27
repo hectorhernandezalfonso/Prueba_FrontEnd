@@ -14,7 +14,7 @@ export default function Background() {
         className="opacity-90 object-cover"
         sizes="100vw"
       />
-      <div className="absolute inset-0 bg-black/30" />
+      <div className="absolute inset-0 bg-black/65" />
     </div>
   );
 }
